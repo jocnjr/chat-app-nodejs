@@ -4,22 +4,24 @@ A simple web chat based on socket.io and Node.js
 
 ## Tech Stack
 
-* [Node.js](https://nodejs.org/en/download/) - JavaScript runtime Server
-* [Express.js](https://expressjs.com/) - Web framework
-* [HandleBars](https://handlebarsjs.com/) - View Engine
-* [Socke.io](https://handlebarsjs.com/) - Real Time Engine based on WebSockets
-* [Bulma](https://bulma.io/) - CSS framework.
+- [Node.js](https://nodejs.org/en/download/) - JavaScript runtime Server
+- [Express.js](https://expressjs.com/) - Web framework
+- [HandleBars](https://handlebarsjs.com/) - View Engine
+- [Socke.io](https://handlebarsjs.com/) - Real Time Engine based on WebSockets
+- [Bulma](https://bulma.io/) - CSS framework.
 
 ### Setup
 
-* Install [Node](https://nodejs.org/en/download/).
-* Clone the [repo](https://github.com/jocnjr/chat-app-nodejs) or download the [zip file](https://github.com/jocnjr/chat-app-nodejs/archive/master.zip).
+- Install [Node](https://nodejs.org/en/download/).
+- Clone the [repo](https://github.com/jocnjr/chat-app-nodejs) or download the [zip file](https://github.com/jocnjr/chat-app-nodejs/archive/master.zip).
 
 ```
 $ npm install
 $ npm start
-$ open [http://localhost:3000](http://localhost:3000)
+$ open http://localhost:3000/
 ```
+
+Open the browser [http://localhost:3000](http://localhost:3000).
 
 ### 1 - The Basics
 
@@ -35,8 +37,8 @@ We'll send random data and percieve the "real time" feeling.
 
 Finally. Here's the chat:
 
-* sending data from html from input
-* broadcast data back to all clients
+- sending data from html from input
+- broadcast data back to all clients
 
 Replace this code on your index.hbs file at: views/index.hbs
 
