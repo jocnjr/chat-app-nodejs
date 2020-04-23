@@ -3,27 +3,16 @@ const chatApp = server => {
   const io = require('socket.io')(server);
 
   io.on('connection', socket => {
-    console.log('socket connected, id: ', socket.conn.id);
+    const userId = socket.conn.id.slice()
+    console.log('socket connected, id: ', userId);
+    io.emit('chatMessages', 'new user connected. total: ' + socket.conn.server.clientsCount);
 
-
-
-    // socket.emit('news', 'hello from the server side!');
-
-    // timer sends a random number by certain interval of time in miliseconds
-    // 1000 = 1s
-    // 500 = 0.5s
-    const timer = setInterval(() => {
-      socket.emit('timer', {
-        timer: Math.random()
-      })
-    }, 1000);
-
-    socket.on('news', data => {
-      console.log(data);
+    socket.on('message', message => {
+      socket.broadcast.emit('chatMessages', userId + ' : ' + message);
     });
 
     socket.on('disconnect', () => {
-      clearInterval(timer);
+      io.emit('chatMessages', 'user disconnected. total: ' + socket.conn.server.clientsCount);
       console.log('disconnected');
     });
   });

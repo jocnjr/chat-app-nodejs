@@ -21,9 +21,18 @@
 
   const messageDiv = document.getElementById('message');
 
-  socket.on('timer', (data) => {
-    messageDiv.innerHTML = 'Data from server: ' + data.timer;
+  socket.on('chatMessages', message => {
+    messageDiv.innerHTML += message + '<br>';
   });
+
+  document.querySelector('button').onclick = e => {
+    console.log('yo!');
+    const message = document.querySelector('input').value;
+    messageDiv.innerHTML += 'you: ' + message + '<br>';
+    // sending the message to socket's server
+    socket.emit('message', message);
+    document.querySelector('input').value = '';
+  };
 
   socket.on('connect', () => {
     console.log('connected')
