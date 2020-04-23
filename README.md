@@ -7,7 +7,7 @@ A simple web chat based on socket.io and Node.js
 - [Node.js](https://nodejs.org/en/download/) - JavaScript runtime Server
 - [Express.js](https://expressjs.com/) - Web framework
 - [HandleBars](https://handlebarsjs.com/) - View Engine
-- [Socke.io](https://handlebarsjs.com/) - Real Time Engine based on WebSockets
+- [Socket.io](https://socket.io/) - Real Time Engine based on WebSockets
 - [Bulma](https://bulma.io/) - CSS framework.
 
 ### Setup
@@ -59,9 +59,11 @@ Replace this code on your index.hbs file at: views/index.hbs
       </div>
     </div>
     <button class="button is-primary">Send Message</button>
-    <br>
-    <div id="watch_mouse"></div>
   </div>
 </section>
 
 ```
+
+## About me
+
+Get in touch with [me](https://www.linkedin.com/in/joccastroneves/).
