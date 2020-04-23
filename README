@@ -10,16 +10,6 @@ A simple web chat based on socket.io and Node.js
 * [Socke.io](https://handlebarsjs.com/) - Real Time Engine based on WebSockets
 * [Bulma](https://bulma.io/) - CSS framework.
 
-
-## What we'll learn?
-
-We're going to go from the basics to a ChatApp in no time.
-
-```
-Give examples
-```
-
-
 ### Setup
 
 * Install [Node](https://nodejs.org/en/download/).
