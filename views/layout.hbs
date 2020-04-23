@@ -19,19 +19,11 @@
 
   const socket = io('/');
 
+  const messageDiv = document.getElementById('message');
 
-
-  socket.on('news', data => {
-    console.log(data);
-
-    // dom manipulation
-    const messageDiv = document.getElementById('message');
-    messageDiv.innerHTML = data;
-
-    socket.emit('news', 'hi from the client side')
+  socket.on('timer', (data) => {
+    messageDiv.innerHTML = 'Data from server: ' + data.timer;
   });
-
-
 
   socket.on('connect', () => {
     console.log('connected')

@@ -7,14 +7,23 @@ const chatApp = server => {
 
 
 
-    socket.emit('news', 'hello from the server side!');
+    // socket.emit('news', 'hello from the server side!');
 
+    // timer sends a random number by certain interval of time in miliseconds
+    // 1000 = 1s
+    // 500 = 0.5s
+    const timer = setInterval(() => {
+      socket.emit('timer', {
+        timer: Math.random()
+      })
+    }, 1000);
 
     socket.on('news', data => {
       console.log(data);
     });
 
     socket.on('disconnect', () => {
+      clearInterval(timer);
       console.log('disconnected');
     });
   });
