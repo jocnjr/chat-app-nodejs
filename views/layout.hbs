@@ -9,7 +9,38 @@
 </head>
 
 <body>
+  <!-- index.hbs content will appear here -->
   {{{body}}}
 </body>
+<!-- chatApp Client Side -->
+
+<script type="text/javascript">
+  console.log('we\'re on');
+
+  const socket = io('/');
+
+
+
+  socket.on('news', data => {
+    console.log(data);
+
+    // dom manipulation
+    const messageDiv = document.getElementById('message');
+    messageDiv.innerHTML = data;
+
+    socket.emit('news', 'hi from the client side')
+  });
+
+
+
+  socket.on('connect', () => {
+    console.log('connected')
+  });
+
+  socket.on('disconnect', () => {
+    console.log('disconnected')
+  });
+
+</script>
 
 </html>
